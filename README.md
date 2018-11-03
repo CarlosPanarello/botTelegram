@@ -2,13 +2,13 @@
 Bot do telegram que utiliza o telegraf para realizar acoes na api de poupanca.
 
 # Dependencias
-  - Poupanca API
-  - Mongo DB
-    Caso possua um banco incluir as seguintes variaveis de ambiente
-    mongo_pwd - senha do usuario admin do mongo
-    mongo_user - usuario admin do mongo
-    mongodb_app - url do mongo no padrao 'mongodb://endereco:27017/poupanca_bot'
-  - Arquivos de Enviroment (.env e .envDev) na raiz do projeto no seguinte padrao
+  * Poupanca API
+  * Mongo DB
+      * Caso possua um banco incluir as seguintes variaveis de ambiente
+      * mongo_pwd - senha do usuario admin do mongo
+      * mongo_user - usuario admin do mongo
+      * mongodb_app - url do mongo no padrao 'mongodb://endereco:27017/poupanca_bot'
+  * Arquivos de Enviroment (.env e .envDev) na raiz do projeto no seguinte padrao
     ```javascript
     const token = 'TOKEN FORNECIDO PELO BOTFATHER DO TELEGRAM'
     // Enderecos da API de Poupanca
