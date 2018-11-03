@@ -32,13 +32,13 @@ Bot do telegram que utiliza o telegraf para realizar acoes na api de poupanca.
     }
     ```
 
-# Execução Local:
-  - npm run start
+### Execução Local:
+  * npm run start
 
-# Debug Local:
-  - npm run debug
+### Debug Local:
+  * npm run debug
 
-# Docker Compose:
-  - npm run docker
+### Docker Compose:
+  * npm run docker
 
-# VS Code com os comandos acima ja configurados
+* vscode ja esta configurado para as ações acima
