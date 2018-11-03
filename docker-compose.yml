@@ -1,0 +1,48 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    volumes:
+    - ./bd_Data:/data/db
+    restart: always
+    command: --storageEngine wiredTiger
+    ports:
+    - "27019:27017"
+    networks:
+      - poupanca_bot-net
+    environment:
+      TZ: America/Sao_Paulo 
+      MONGO_INITDB_ROOT_USERNAME: app_mongo_user
+      MONGO_INITDB_ROOT_PASSWORD: senha_mongo
+      MONGO_INITDB_DATABASE: poupanca_bot
+  poupanca_bot-debug:
+    image: poupanca_bot-debug
+    build:
+      context: ./
+      dockerfile: ./Dockerfile    
+    command: 'npm run debug'
+    depends_on:
+      - mongo
+    links:
+      - mongo:mongo
+    networks: 
+    - poupanca_bot-net
+    ports:    
+    - "3000:3000"
+    - "9429:9429"
+    volumes: 
+    - ./app:/app/app
+    - ./node_modules:/app/node_modules
+    environment:
+      TZ: America/Sao_Paulo     
+      mongodb_app: mongodb://mongo:27017/poupanca_bot
+      api_port: 3000  
+      mongo_user: app_mongo_user
+      mongo_pwd: senha_mongo
+      NODE_ENV: development
+networks: 
+  poupanca_bot-net: 
+    driver: bridge
+    ipam: 
+      config: 
+      - subnet: 192.192.128.0/24

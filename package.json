@@ -1,0 +1,24 @@
+{
+  "name": "poupanca-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "nodemon --legacy-watch --delay 1 --inspect=0.0.0.0:9429 app/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app/index.js",
+    "docker-debug": "docker-compose up --remove-orphans --build --force-recreate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "telegraf": "^3.24.0",
+    "mongoose": "5.2.7",
+    "date-fns": "^1.29.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
